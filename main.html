@@ -1,25 +1,40 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<meta charset=utf-8 /> 
-	<title>Insert row in a table</title> 
-	<link rel="stylesheet" href="styles.css">
+  <title>Insert Row in Table</title>
 </head>
-
 <body>
-	<table id="sampleTable" border="1"> 
-		<tr><td>Row1 cell1</td> 
-		<td>Row1 cell2</td></tr> 
-		<tr><td>Row2 cell1</td> 
-		<td>Row2 cell2</td></tr> 
-	</table><br> 
-	
-	<input type="button" onclick="insert_Row()" value="Insert row">  
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <table id="sampleTable" border="1">
+    <tr>
+      <td>Row1 cell1</td>
+      <td>Row1 cell2</td>
+    </tr>
+    <tr>
+      <td>Row2 cell1</td>
+      <td>Row2 cell2</td>
+    </tr>
+  </table>
+  <br>
+  <button onclick="insert_Row()">Insert row</button>
+
+  <script>
+    function insert_Row() {
+      // Get the table by ID
+      var table = document.getElementById("sampleTable");
+
+      // Insert a new row at the top (index 0)
+      var newRow = table.insertRow(0);
+
+      // Insert two cells in the new row
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+
+      // Set the content of the new cells
+      cell1.innerHTML = "New Cell1";
+      cell2.innerHTML = "New Cell2";
+    }
+  </script>
 
 </body>
-
 </html>
